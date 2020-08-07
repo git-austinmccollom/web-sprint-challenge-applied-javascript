@@ -8,6 +8,12 @@
 axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then( response => {
         console.log(response);
+
+        const articlesObj = response.data.articles
+        for ( const topic in articlesObj) {
+            console.log(articlesObj[topic]);
+        }
+
         let card = cardMaker(response.data.articles.bootstrap[0]);
         const cardsContainer = document.querySelector('.cards-container');
         cardsContainer.appendChild(card);
