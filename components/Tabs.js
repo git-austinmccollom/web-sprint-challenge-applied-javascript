@@ -22,6 +22,11 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
             tab.textContent = topic;
             //style
             tab.classList.add('tab');
+            
+            const cardsContainer = document.querySelector('.cards-container');
+            tab.addEventListener('click', event => {
+                cardsContainer.setAttribute('id', topic);
+            })
         })
     })
 
