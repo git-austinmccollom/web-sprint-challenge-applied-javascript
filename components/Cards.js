@@ -66,7 +66,62 @@ function cardMaker( { headline, authorPhoto, authorName } ) {
 
     return card;
 }
-console.log(cardMaker({}));
+
+const cardsContainer = document.querySelector('.cards-container');
+
+window.setInterval( function filterCards(){
+    if ( cardsContainer.id === 'javascript') {
+        cards = document.querySelectorAll('.card');
+        cards.forEach( card => {
+            if ( card.id != 'javascript' ) {
+                card.style.display = 'none';
+            } else if (card.id === 'javascript') {
+                card.style.display = 'block';
+            }
+        })
+    }
+    if ( cardsContainer.id === 'bootstrap') {
+        cards = document.querySelectorAll('.card');
+        cards.forEach( card => {
+            if ( card.id != 'bootstrap' ) {
+                card.style.display = 'none';
+            } else if (card.id === 'bootstrap') {
+                card.style.display = 'block';
+            }
+        })
+    }
+    if ( cardsContainer.id === 'technology') {
+        cards = document.querySelectorAll('.card');
+        cards.forEach( card => {
+            if ( card.id != 'technology' ) {
+                card.style.display = 'none';
+            } else if (card.id === 'technology') {
+                card.style.display = 'block';
+            }
+        })
+    }
+    if ( cardsContainer.id === 'jquery') {
+        cards = document.querySelectorAll('.card');
+        cards.forEach( card => {
+            if ( card.id != 'jquery' ) {
+                card.style.display = 'none';
+            } else if (card.id === 'jquery') {
+                card.style.display = 'block';
+            }
+        })
+    }
+    if ( cardsContainer.id === 'node.js') {
+        cards = document.querySelectorAll('.card');
+        cards.forEach( card => {
+            if ( card.id != 'node' ) {
+                card.style.display = 'none';
+            } else if (card.id === 'node') {
+                card.style.display = 'block';
+            }
+        })
+    }
+}
+, 100);
 
 // Write a function that takes a single article object and returns the following markup:
 //
