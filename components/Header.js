@@ -1,6 +1,7 @@
 // STEP 1: Create a Header component.
 // -----------------------
-// Write a function that takes no arguments and returns the markup you see below:
+// Write a function that takes no arguments and returns the 
+//markup you see below:
 //
 //  <div class="header">
 //    <span class="date">MARCH 28, 2020</span>
@@ -11,4 +12,30 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header() {}
+function Header() {
+    // instatiate elements
+    const header = document.createElement('div');
+    const date = document.createElement('span');
+    const title = document.createElement('h1');
+    const temp = document.createElement('span');
+
+    // append and organize
+
+    header.appendChild(date);
+    header.appendChild(title);
+    header.appendChild(temp);
+
+    // add static content (no json given)
+    date.textContent = 'MARCH 28, 2020';
+    title.textContent = 'Lambda Times';
+    temp.textContent = '98°';
+
+    // add styles
+
+    header.classList.add('header');
+    title.classList.add('date');
+    temp.classList.add('temp');
+
+    return header;
+}
+console.log(Header());
