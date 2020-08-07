@@ -11,7 +11,12 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
 
         const articlesObj = response.data.articles
         for ( const topic in articlesObj) {
-            console.log(articlesObj[topic]);
+            articlesObj[topic].forEach( article => {
+                let card = cardMaker(article);
+                card.setAttribute('id', topic)
+                const cardsContainer = document.querySelector('.cards-container');
+                cardsContainer.appendChild(card);
+            })
         }
 
         let card = cardMaker(response.data.articles.bootstrap[0]);
@@ -54,6 +59,10 @@ function cardMaker( { headline, authorPhoto, authorName } ) {
     headlineElement.classList.add('headline');
     author.classList.add('author');
     imgContainer.classList.add('img-container');
+
+    card.addEventListener('click', event => {
+        console.log(headline);
+    })
 
     return card;
 }
